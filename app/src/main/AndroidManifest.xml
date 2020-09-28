@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2012 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        coreApp="true"
+        package="io.github.otobikb.inputmethod.latin">
+
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+
+    <!-- A signature-protected permission to ask AOSP Keyboard to close the software keyboard.
+         To use this, add the following line into calling application's AndroidManifest.xml
+         <pre>
+         {@code
+         <uses-permission android:name="io.github.otobikb.inputmethod.latin.HIDE_SOFT_INPUT"/>
+         }
+         </pre>
+         then call {@link android.content.Context#sendBroadcast(Intent)} as follows:
+         <pre>
+         {@code
+         sendBroadcast(new Intent("io.github.otobikb.inputmethod.latin.HIDE_SOFT_INPUT")
+                 .setPackage("io.github.otobikb.inputmethod.latin"));
+         }
+         </pre> -->
+    <permission android:name="io.github.otobikb.inputmethod.latin.HIDE_SOFT_INPUT"
+                android:protectionLevel="signature" />
+
+    <application android:label="@string/english_ime_name"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:allowBackup="true"
+            android:defaultToDeviceProtectedStorage="true"
+            android:directBootAware="true"
+            android:extractNativeLibs="false">
+
+        <!-- Services -->
+        <service android:name="io.github.otobikb.inputmethod.latin.LatinIME"
+                android:label="@string/english_ime_name"
+                android:permission="android.permission.BIND_INPUT_METHOD">
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+            <meta-data android:name="android.view.im" android:resource="@xml/method" />
+        </service>
+
+        <service android:name="io.github.otobikb.inputmethod.latin.spellcheck.AndroidSpellCheckerService"
+                 android:label="@string/spell_checker_service_name"
+                 android:permission="android.permission.BIND_TEXT_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.textservice.SpellCheckerService" />
+            </intent-filter>
+            <meta-data android:name="android.view.textservice.scs"
+                    android:resource="@xml/spellchecker" />
+        </service>
+
+        <!-- Activities -->
+        <activity android:name="io.github.otobikb.inputmethod.latin.setup.SetupActivity"
+                android:theme="@style/platformActivityTheme"
+                android:label="@string/english_ime_name"
+                android:icon="@mipmap/ic_launcher"
+                android:launchMode="singleTask"
+                android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="io.github.otobikb.inputmethod.latin.permissions.PermissionsActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="false"
+            android:taskAffinity="" >
+        </activity>
+
+        <activity android:name="io.github.otobikb.inputmethod.latin.setup.SetupWizardActivity"
+                android:theme="@style/platformActivityTheme"
+                android:label="@string/english_ime_name"
+                android:clearTaskOnLaunch="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="io.github.otobikb.inputmethod.latin.settings.SettingsActivity"
+                android:theme="@style/platformSettingsTheme"
+                android:label="@string/english_ime_settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="io.github.otobikb.inputmethod.latin.spellcheck.SpellCheckerSettingsActivity"
+                  android:theme="@style/platformSettingsTheme"
+                  android:label="@string/android_spell_checker_settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+
+        <!-- Unexported activity used for tests. -->
+        <activity android:name="io.github.otobikb.inputmethod.latin.settings.TestFragmentActivity"
+                android:exported="false" />
+
+        <!-- Broadcast receivers -->
+        <receiver android:name="io.github.otobikb.inputmethod.latin.SystemBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_INITIALIZE" />
+                <action android:name="android.intent.action.LOCALE_CHANGED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="io.github.otobikb.inputmethod.latin.DictionaryPackInstallBroadcastReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="io.github.otobikb.inputmethod.dictionarypack.aosp.UNKNOWN_CLIENT" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Content providers -->
+        <provider android:name="io.github.otobikb.inputmethod.dictionarypack.DictionaryProvider"
+            android:grantUriPermissions="true"
+            android:exported="false"
+            android:authorities="@string/authority"
+            android:multiprocess="false"
+            android:label="@string/dictionary_provider_name">
+        </provider>
+    </application>
+</manifest>
