@@ -1,0 +1,28 @@
+# Keep classes and methods that have the @UsedForTesting annotation
+-keep @io.github.otobikb.inputmethod.annotations.UsedForTesting class *
+-keepclassmembers class * {
+    @io.github.otobikb.inputmethod.annotations.UsedForTesting *;
+}
+
+# Keep classes and methods that have the @ExternallyReferenced annotation
+-keep @io.github.otobikb.inputmethod.annotations.ExternallyReferenced class *
+-keepclassmembers class * {
+    @io.github.otobikb.inputmethod.annotations.ExternallyReferenced *;
+}
+
+# Keep native methods
+-keepclassmembers class * {
+    native <methods>;
+}
+
+# Keep classes that are used as a parameter type of methods that are also marked as keep
+# to preserve changing those methods' signature.
+-keep class io.github.otobikb.inputmethod.latin.AssetFileAddress
+-keep class io.github.otobikb.inputmethod.latin.Dictionary
+-keep class io.github.otobikb.inputmethod.latin.NgramContext
+-keep class io.github.otobikb.inputmethod.latin.makedict.ProbabilityInfo
+-keep class io.github.otobikb.inputmethod.latin.utils.LanguageModelParam
+
+# TODO: remove once used in code.
+-keep class io.github.otobikb.inputmethod.keyboard.KeyboardLayout { *; }
+
