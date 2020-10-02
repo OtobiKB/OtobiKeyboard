@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_marginStart="10dp"
-        android:text="র লেখার পরে শিফট থেকে য-ফলা (‌্য) ট্যাপ করে ধরে রাখলে র‌্য টাইপ হবে।"
+        android:text="র বর্ণ ট্যাপ করে ধরে রাখলে র‌্য টাইপের অপশন আসবে।"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 

@@ -21,7 +21,7 @@
     <array
         name="emoji_nature"
         format="string"
-    >
+        >
         <item>1f415</item>
         <item>1f436</item>
         <item>1f429</item>
@@ -204,7 +204,7 @@
     <array
         name="emoji_symbols"
         format="string"
-    >
+        >
         <item>fe82e|0031,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
         <item>fe82f|0032,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
         <item>fe830|0033,20e3|99</item> <!-- TODO: fix support min sdk version (99) -->
@@ -435,7 +435,7 @@
     <array
         name="emoji_faces"
         format="string"
-    >
+        >
         <item>263a</item>
         <item>1f60a</item>
         <item>1f600</item>
@@ -613,7 +613,7 @@
     <array
         name="emoji_objects"
         format="string"
-    >
+        >
         <item>1f530</item>
         <item>1f484</item>
         <item>1f45e</item>
@@ -792,7 +792,7 @@
     <array
         name="emoji_places"
         format="string"
-    >
+        >
         <item>1f3e0</item>
         <item>1f3e1</item>
         <item>1f3e2</item>
@@ -924,7 +924,7 @@
     <array
         name="emoji_flags"
         format="string"
-    >
+        >
         <item>1f1e6,1f1e9</item>
         <item>1f1e6,1f1ea</item>
         <item>1f1e6,1f1eb</item>
@@ -1161,22 +1161,37 @@
     <array
         name="emoji_emoticons"
         format="string"
-    >
-        <item>(╯°</item>
-        <item>□°）</item>
-        <item>╯︵ </item>
-        <item>┻━┻</item>
-        <item> ¯\\_</item>
-        <item>(ツ)</item>
-        <item>_/¯</item>
-        <item>┬─┬</item>
-        <item>︵ /(</item>
-        <item>.□.\\</item>
+        >
+        <item>:-)</item>
+        <item>:-/</item>
+        <item>=-O</item>
+        <item>&#60;3</item>
+        <item>D:&#60;</item>
+        <item>:-P</item>
+        <item>;-)</item>
+        <item>:‑|</item>
+        <item>:-J</item>
+        <item>:-(</item>
+        <item>:-!</item>
+        <item>:-$</item>
+        <item>B-)</item>
+        <item>:O</item>
+        <item>:-*</item>
+        <item>:-D</item>
+        <item>#‑)</item>
+        <item>>:‑)</item>
+        <item>O:-)</item>
+        <item>:-[</item>
+        <item>>:P</item>
+        <item>:‑X</item>
+        <item>%‑)</item>
+        <item>xD</item>
+        <item>:@</item>
     </array>
     <array
         name="emoji_eight_symbols"
         format="string"
-    >
+        >
         <!-- transport-sign -->
         <item>1F3E7</item>
         <item>1F6AE</item>
@@ -1396,7 +1411,7 @@
     <array
         name="emoji_eight_animals_nature"
         format="string"
-    >
+        >
         <!-- animal-mammal -->
         <item>1F435</item>
         <item>1F412</item>
@@ -1522,7 +1537,7 @@
     <array
         name="emoji_eight_smiley_people"
         format="string"
-    >
+        >
         <!-- face-positive -->
         <item>1F600</item>
         <item>1F601</item>
@@ -3052,7 +3067,7 @@
     <array
         name="emoji_eight_smiley_people_boring"
         format="string"
-    >
+        >
         <!-- face-positive -->
         <item>1F600</item>
         <item>1F601</item>
@@ -4583,7 +4598,7 @@
     <array
         name="emoji_eight_food_drink"
         format="string"
-    >
+        >
         <!-- food-fruit -->
         <item>1F347</item>
         <item>1F348</item>
@@ -4697,7 +4712,7 @@
     <array
         name="emoji_eight_objects"
         format="string"
-    >
+        >
         <!-- sound -->
         <item>1F507</item>
         <item>1F508</item>
@@ -4879,7 +4894,7 @@
     <array
         name="emoji_eight_activity"
         format="string"
-    >
+        >
         <!-- event -->
         <item>1F383</item>
         <item>1F384</item>
@@ -4948,7 +4963,7 @@
     <array
         name="emoji_eight_travel_places"
         format="string"
-    >
+        >
         <!-- place-map -->
         <item>1F30D</item>
         <item>1F30E</item>
@@ -5171,7 +5186,7 @@
     <array
         name="emoji_eight_flags"
         format="string"
-    >
+        >
         <item>1F3C1</item>
         <item>1F6A9</item>
         <item>1F38C</item>

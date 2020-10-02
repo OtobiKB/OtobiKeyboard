@@ -22,9 +22,7 @@
     <switch>
         <case latin:keyboardLayoutSetElement="alphabetManualShifted|alphabetShiftLocked|alphabetShiftLockShifted">
             <!-- bengali ligature ya-phala -->
-            <Key
-                 latin:keySpec="&#2509;&#2479;"
-                 latin:moreKeys="&#8205;&#2509;&#2479;" />
+            <Key latin:keySpec="&#2509;&#2479;" />
             <!-- bengali vowel sign au -->
             <Key latin:keySpec="&#2508;"
                  latin:keyHintLabel="&#2452;"
@@ -58,7 +56,8 @@
             <!-- bengali letter ra -->
             <Key latin:keySpec="&#2480;"
                  latin:keyHintLabel="&#2482;"
-                 latin:moreKeys="&#2482;" />
+                 latin:additionalMoreKeys="&#2482;"
+                 latin:moreKeys="&#2480;&#8205;&#2509;&#2479;" />
             <!-- bengali letter na -->
             <Key latin:keySpec="&#2472;"
                  latin:keyHintLabel="&#2467;"

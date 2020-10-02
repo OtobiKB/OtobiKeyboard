@@ -18,7 +18,7 @@
     xmlns:latin="http://schemas.android.com/apk/res-auto"
     android:key="@string/settings_screen_about"
     android:title="@string/settings_screen_about">
-    <PreferenceCategory android:title="কীভাবে ‘র‌্য’ (র‌্যাম, র‌্যাব) টাইপ করব?">
+    <PreferenceCategory android:title="কীভাবে র‌্য (র‌্যাম, র‌্যাব) টাইপ করব?">
         <Preference
             android:layout="@layout/help_rya"/>
     </PreferenceCategory>
