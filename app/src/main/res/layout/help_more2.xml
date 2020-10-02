@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="বাংলা লেআউট থেকে দাঁড়ি (।) ট্যাপ ধরে রাখলে ডাবল দাঁড়ি (॥) টাইপের অপশন আসবে। এছাড়া নুকতা (়), ঈশ্বর চিহ্ন (৺), ৡ, ৡ, ৰ, ৱ ইত্যাদি বর্ণগুলো টাইপের জন্য শিফট থেকে চন্দ্রবিন্দু ও রেফ ট্যাপ ধরে রাখতে হবে।"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

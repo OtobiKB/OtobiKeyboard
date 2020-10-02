@@ -37,6 +37,10 @@
         android:title="@string/settings_screen_advanced"
         android:key="screen_advanced" />
     <PreferenceScreen
+        android:fragment="io.github.otobikb.inputmethod.latin.settings.HelpFragment"
+        android:title="@string/settings_screen_help"
+        android:key="screen_help" />
+    <PreferenceScreen
         android:fragment="io.github.otobikb.inputmethod.latin.settings.AboutFragment"
         android:title="@string/settings_screen_about"
         android:key="screen_about" />

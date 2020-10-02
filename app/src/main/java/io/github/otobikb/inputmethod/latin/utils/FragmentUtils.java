@@ -25,6 +25,7 @@ import io.github.otobikb.inputmethod.latin.settings.DebugSettingsFragment;
 import io.github.otobikb.inputmethod.latin.settings.GestureSettingsFragment;
 import io.github.otobikb.inputmethod.latin.settings.PreferencesSettingsFragment;
 import io.github.otobikb.inputmethod.latin.settings.SettingsFragment;
+import io.github.otobikb.inputmethod.latin.settings.HelpFragment;
 import io.github.otobikb.inputmethod.latin.settings.AboutFragment;
 import io.github.otobikb.inputmethod.latin.settings.ThemeSettingsFragment;
 import io.github.otobikb.inputmethod.latin.spellcheck.SpellCheckerSettingsFragment;
@@ -48,6 +49,7 @@ public class FragmentUtils {
         sLatinImeFragments.add(AdvancedSettingsFragment.class.getName());
         sLatinImeFragments.add(DebugSettingsFragment.class.getName());
         sLatinImeFragments.add(SettingsFragment.class.getName());
+        sLatinImeFragments.add(HelpFragment.class.getName());
         sLatinImeFragments.add(AboutFragment.class.getName());
         sLatinImeFragments.add(SpellCheckerSettingsFragment.class.getName());
         sLatinImeFragments.add(UserDictionaryAddWordFragment.class.getName());

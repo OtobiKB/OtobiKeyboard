@@ -25,11 +25,11 @@
     <PreferenceCategory android:title="A free and open-source Bangla keyboard">
         <Preference android:title="Visit Otobi website" android:summary="https://otobikb.github.io">
             <intent android:action="android.intent.action.VIEW"
-                android:data="http://www.example.com" />
+                android:data="https://otobikb.github.io/" />
         </Preference>
         <Preference android:title="Developer" android:summary="Md. Rifat Hasan Jihan" >
             <intent android:action="android.intent.action.VIEW"
-                android:data="http://www.example.com" />
+                android:data="https://facebook.com/RHJihan" />
         </Preference>
     </PreferenceCategory>
     <PreferenceCategory android:title="Find me on">
@@ -39,7 +39,7 @@
         </Preference>
         <Preference android:title="Portfolio" android:summary="https://rhjihan.github.io" >
             <intent android:action="android.intent.action.VIEW"
-                android:data="https://github.com/RHJihan" />
+                android:data="https://rhjihan.github.io/" />
         </Preference>
     </PreferenceCategory>
 </PreferenceScreen>

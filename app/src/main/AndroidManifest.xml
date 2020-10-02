@@ -129,5 +129,4 @@
             android:label="@string/dictionary_provider_name"
             android:multiprocess="false" />
     </application>
-
 </manifest>
