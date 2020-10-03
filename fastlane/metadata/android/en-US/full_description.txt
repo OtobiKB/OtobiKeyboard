@@ -12,4 +12,4 @@ Features:
 
 Website: https://otobikb.github.io
 
-This app is opensource, the code is available here: https://github.com/OtobiKB/OtobiKeyboard
+This app is open-source, the code is available here: https://github.com/OtobiKB/OtobiKeyboard
