@@ -18,7 +18,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="english_ime_name" translatable="false">Otobi Keyboard</string>
+    <string name="english_ime_name">Otobi Keyboard</string>
     <!-- Name of Android spell checker service. AOSP(Android Open Source Project) should not be translated.
          This resource should be copied from msgid="511950477199948048" -->
     <string name="spell_checker_service_name">Otobi Keyboard Spell Checker</string>
@@ -570,4 +570,7 @@ mobile devices. [CHAR LIMIT=25] -->
     <string name="more_keys_strip_description">More keys</string>
     <string name="prefs_force_incognito_mode">Force incognito mode</string>
     <string name="prefs_force_incognito_mode_summary">Disable learning of new words</string>
+    <string name="about_developer">Md. Rifat Hasan Jihan</string>
+    <string name="about_facebook">Facebook</string>
+    <string name="about_portfolio">Portfolio</string>
 </resources>

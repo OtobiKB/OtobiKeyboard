@@ -27,17 +27,17 @@
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://otobikb.github.io/" />
         </Preference>
-        <Preference android:title="Developer" android:summary="Md. Rifat Hasan Jihan" >
+        <Preference android:title="Developer" android:summary="@string/about_developer" >
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://facebook.com/RHJihan" />
         </Preference>
     </PreferenceCategory>
     <PreferenceCategory android:title="Find me on">
-        <Preference android:title="Facebook" android:summary="https://facebook.com/RHJihan" >
+        <Preference android:title="@string/about_facebook" android:summary="https://facebook.com/RHJihan" >
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://facebook.com/RHJihan" />
         </Preference>
-        <Preference android:title="Portfolio" android:summary="https://rhjihan.github.io" >
+        <Preference android:title="@string/about_portfolio" android:summary="https://rhjihan.github.io" >
             <intent android:action="android.intent.action.VIEW"
                 android:data="https://rhjihan.github.io/" />
         </Preference>

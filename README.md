@@ -1,6 +1,7 @@
 # Otobi Keyboard
 The Bangla keyboard for Android at which you are skilled.<br><br>
-<img src="elements/bn_wiki.png" height="500">
+<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7-en_US.png" height="500">
+
 ## About
 Features:
 - Bijoy-like layout for Bangla 
@@ -11,10 +12,11 @@ Features:
 - Ads-free
 - Based on Android Open Source Project keyboard
 - Free and open-source
-## Download
-[&#10687;&nbsp;Download form Github Release](https://github.com/OtobiKB/OtobiKeyboard/releases/download/V1.0/Otobi_Keyboard.apk)
 
-# License
+## Download
+[&#10687;&nbsp;Download form Github Release](https://github.com/OtobiKB/OtobiKeyboard/releases/download/v1.0/Otobi_Keyboard.apk)
+
+## License
 GNU General Public License v3.0
 
 ## Credits
