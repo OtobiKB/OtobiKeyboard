@@ -1,5 +1,5 @@
 # Otobi Keyboard
-The Bangla keyboard for Android at which you are skilled.<br><br>
+The Bangla keyboard for Android in which you are skilled.<br><br>
 <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7-en_US.png" height="500">
 
 ## About
