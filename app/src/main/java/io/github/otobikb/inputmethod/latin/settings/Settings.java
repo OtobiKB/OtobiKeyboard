@@ -75,6 +75,8 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
             Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     public static final String PREF_SHOW_LANGUAGE_SWITCH_KEY =
             "pref_show_language_switch_key";
+    public static final String PREF_SHOW_EMOJI_KEY =
+            "pref_show_emoji_key";
     public static final String PREF_INCLUDE_OTHER_IMES_IN_LANGUAGE_SWITCH_LIST =
             "pref_include_other_imes_in_language_switch_list";
     public static final String PREF_CUSTOM_INPUT_STYLES = "custom_input_styles";
@@ -100,7 +102,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     public static final String PREF_KEY_IS_INTERNAL = "pref_key_is_internal";
 
     public static final String PREF_ENABLE_METRICS_LOGGING = "pref_enable_metrics_logging";
-    
+
     public static final String PREF_SHOW_NUMBER_ROW =
             "pref_show_number_row";
 
@@ -261,7 +263,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
     }
 
     public static boolean readAlwaysIncognitoMode(final SharedPreferences prefs) {
-        return prefs.getBoolean(PREF_ALWAYS_INCOGNITO_MODE, true);
+        return prefs.getBoolean(PREF_ALWAYS_INCOGNITO_MODE, false);
     }
 
     public static String readPrefAdditionalSubtypes(final SharedPreferences prefs,
@@ -333,7 +335,7 @@ public final class Settings implements SharedPreferences.OnSharedPreferenceChang
         final int milliseconds = prefs.getInt(prefKey, UNDEFINED_PREFERENCE_VALUE_INT);
         return (milliseconds != UNDEFINED_PREFERENCE_VALUE_INT) ? milliseconds : defaultValue;
     }
-    
+
     public static boolean readShowsNumberRow(final SharedPreferences prefs) {
         return prefs.getBoolean(PREF_SHOW_NUMBER_ROW, false);
     }

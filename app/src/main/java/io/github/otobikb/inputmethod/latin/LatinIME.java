@@ -16,6 +16,8 @@
 
 package io.github.otobikb.inputmethod.latin;
 
+import android.Manifest.permission;
+import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -63,9 +65,7 @@ import io.github.otobikb.inputmethod.keyboard.KeyboardActionListener;
 import io.github.otobikb.inputmethod.keyboard.KeyboardId;
 import io.github.otobikb.inputmethod.keyboard.KeyboardSwitcher;
 import io.github.otobikb.inputmethod.keyboard.MainKeyboardView;
-
-import io.github.otobikb.inputmethod.latin.R;
-
+import io.github.otobikb.inputmethod.latin.Suggest.OnGetSuggestedWordsCallback;
 import io.github.otobikb.inputmethod.latin.SuggestedWords.SuggestedWordInfo;
 import io.github.otobikb.inputmethod.latin.common.Constants;
 import io.github.otobikb.inputmethod.latin.common.CoordinateUtils;
@@ -100,11 +100,9 @@ import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nonnull;
 
-import io.github.otobikb.inputmethod.accessibility.AccessibilityUtils;
-import io.github.otobikb.inputmethod.annotations.UsedForTesting;
-import io.github.otobikb.inputmethod.compat.EditorInfoCompatUtils;
-import io.github.otobikb.inputmethod.compat.ViewOutlineProviderCompatUtils;
-import io.github.otobikb.inputmethod.dictionarypack.DictionaryPackConstants;
+import static io.github.otobikb.inputmethod.latin.common.Constants.ImeOption.FORCE_ASCII;
+import static io.github.otobikb.inputmethod.latin.common.Constants.ImeOption.NO_MICROPHONE;
+import static io.github.otobikb.inputmethod.latin.common.Constants.ImeOption.NO_MICROPHONE_COMPAT;
 
 /**
  * Input method implementation for Qwerty'ish keyboard.
@@ -151,12 +149,11 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
 
     // TODO: Move these {@link View}s to {@link KeyboardSwitcher}.
     private View mInputView;
-    private ViewOutlineProviderCompatUtils.InsetsUpdater mInsetsUpdater;
+    private InsetsUpdater mInsetsUpdater;
     private SuggestionStripView mSuggestionStripView;
 
     private RichInputMethodManager mRichImm;
-    @UsedForTesting
-    final KeyboardSwitcher mKeyboardSwitcher;
+    @UsedForTesting final KeyboardSwitcher mKeyboardSwitcher;
     private final SubtypeState mSubtypeState = new SubtypeState();
     private EmojiAltPhysicalKeyDetector mEmojiAltPhysicalKeyDetector;
     private StatsUtilsManager mStatsUtilsManager;
@@ -894,11 +891,11 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
         Log.i(TAG, "Starting input. Cursor position = "
                 + editorInfo.initialSelStart + "," + editorInfo.initialSelEnd);
         // TODO: Consolidate these checks with {@link InputAttributes}.
-        if (InputAttributes.inPrivateImeOptions(null, Constants.ImeOption.NO_MICROPHONE_COMPAT, editorInfo)) {
+        if (InputAttributes.inPrivateImeOptions(null, NO_MICROPHONE_COMPAT, editorInfo)) {
             Log.w(TAG, "Deprecated private IME option specified: " + editorInfo.privateImeOptions);
-            Log.w(TAG, "Use " + getPackageName() + "." + Constants.ImeOption.NO_MICROPHONE + " instead");
+            Log.w(TAG, "Use " + getPackageName() + "." + NO_MICROPHONE + " instead");
         }
-        if (InputAttributes.inPrivateImeOptions(getPackageName(), Constants.ImeOption.FORCE_ASCII, editorInfo)) {
+        if (InputAttributes.inPrivateImeOptions(getPackageName(), FORCE_ASCII, editorInfo)) {
             Log.w(TAG, "Deprecated private IME option specified: " + editorInfo.privateImeOptions);
             Log.w(TAG, "Use EditorInfo.IME_FLAG_FORCE_ASCII flag instead");
         }
@@ -1324,10 +1321,13 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     }
 
     public void displaySettingsDialog() {
+        launchSettings();
+        /* old dialog
         if (isShowingOptionDialog()) {
             return;
         }
         showSubtypeSelectorAndSettings();
+         */
     }
 
     @Override
@@ -1394,7 +1394,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
     public void switchToNextSubtype() {
         final IBinder token = getWindow().getWindow().getAttributes().token;
         if (shouldSwitchToOtherInputMethods()) {
-            mRichImm.switchToNextInputMethod(token, false /* onlyCurrentIme */);
+            mRichImm.switchToNextInputMethod(token, true /* onlyCurrentIme */);
             return;
         }
         mSubtypeState.switchSubtype(token, mRichImm);
@@ -1587,7 +1587,7 @@ public class LatinIME extends InputMethodService implements KeyboardActionListen
 
     // TODO[IL]: Move this out of LatinIME.
     public void getSuggestedWords(final int inputStyle, final int sequenceNumber,
-                                  final Suggest.OnGetSuggestedWordsCallback callback) {
+                                  final OnGetSuggestedWordsCallback callback) {
         final Keyboard keyboard = mKeyboardSwitcher.getKeyboard();
         if (keyboard == null) {
             callback.onGetSuggestedWords(SuggestedWords.getEmptyInstance());
