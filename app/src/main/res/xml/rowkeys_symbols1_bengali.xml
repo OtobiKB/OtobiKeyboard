@@ -23,42 +23,42 @@
     >
     <Key
         latin:keySpec="&#2535;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_1"
+        latin:additionalMoreKeys="1"
         latin:moreKeys="!text/morekeys_symbols_1" />
     <Key
         latin:keySpec="&#2536;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_2"
+        latin:additionalMoreKeys="2"
         latin:moreKeys="!text/morekeys_symbols_2" />
     <Key
         latin:keySpec="&#2537;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_3"
+        latin:additionalMoreKeys="3"
         latin:moreKeys="!text/morekeys_symbols_3" />
     <Key
         latin:keySpec="&#2538;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_4"
+        latin:additionalMoreKeys="4"
         latin:moreKeys="!text/morekeys_symbols_4" />
     <Key
         latin:keySpec="&#2539;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_5"
+        latin:additionalMoreKeys="5"
         latin:moreKeys="!text/morekeys_symbols_5" />
     <Key
         latin:keySpec="&#2540;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_6"
+        latin:additionalMoreKeys="6"
         latin:moreKeys="!text/morekeys_symbols_6" />
     <Key
         latin:keySpec="&#2541;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_7"
+        latin:additionalMoreKeys="7"
         latin:moreKeys="!text/morekeys_symbols_7" />
     <Key
         latin:keySpec="&#2542;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_8"
+        latin:additionalMoreKeys="8"
         latin:moreKeys="!text/morekeys_symbols_8" />
     <Key
         latin:keySpec="&#2543;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_9"
+        latin:additionalMoreKeys="9"
         latin:moreKeys="!text/morekeys_symbols_9" />
     <Key
         latin:keySpec="&#2534;"
-        latin:additionalMoreKeys="!text/additional_morekeys_symbols_0"
+        latin:additionalMoreKeys="0"
         latin:moreKeys="!text/morekeys_symbols_0" />
 </merge>
